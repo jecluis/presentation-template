@@ -155,7 +155,10 @@ gulp.task('plugins', () => {
     } ));
 })
 
-gulp.task('css-themes', () => gulp.src(['./css/theme/source/*.{sass,scss}'])
+gulp.task('css-themes', () => gulp.src([
+        './css/theme/source/*.{sass,scss}',
+        './css/theme/suse/*.{sass,scss}'
+    ])
         .pipe(sass())
         .pipe(gulp.dest('./dist/theme')))
 

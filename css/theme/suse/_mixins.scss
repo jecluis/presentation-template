@@ -1,0 +1,53 @@
+@mixin slide-numbers($fg: $pine, $bg: white) {
+    .slide-number-wrapper {
+        > a {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+
+            .slide-number {
+                position: relative;
+
+                // Unfortunately reveal.js sets dom.slideNumber.style.display
+                // in the code so we need !important to override it.  This
+                // overrides the slideNumber config option, but slide numbers
+                // are part of this theme anyway.
+                display: inline-block !important;
+
+                left: $section-left-margin;
+                top: 92%;
+                font-size: 5pt;
+                border-radius: 20%;
+                background-color: $bg;
+                color: $fg;
+                span {
+                    font-size: 3em;
+                }
+
+                .slide-number-b {
+                    &:after {
+                        content: "";
+                        border-bottom: thin $jungle solid;
+                        width: 4em;
+                        position: absolute;
+                        top: 0.7em;
+                        left: 3em;
+                    }
+                }
+
+                &:after {
+                    content: "Copyright © 2020";
+                    margin-left: 6em;
+                    font-size: 3em;
+                    color: $fg;
+                }
+            }
+        }
+    }
+}
+
+@mixin no-slide-numbers {
+    .slide-number {
+        display: none !important;
+    }
+}

@@ -1,0 +1,99 @@
+// Styling for normal slides
+
+.dots .reveal {
+    .slides {
+        background:
+            url(../images/SUSE/SUSE.png)
+               95% 95%              //  x/y positions
+             / 5% 3%              //  x/y sizes
+                no-repeat,
+            url(../images/SUSE/dots-small-black.svg)
+               70% 110%
+             / 40% 30%
+                no-repeat !important;
+    }
+}
+
+.normal .reveal {
+    $slide-width: 100% - 2 * $section-left-margin;
+
+    .slides {
+        background:
+            url(../images/SUSE/SUSE.png)
+               95% 95%              //  x/y positions
+             / 5% 3%              //  x/y sizes
+                no-repeat;
+
+        text-align: inherit;
+        color: $pine !important;
+
+        .breadcrumbs {
+            color: $jungle;
+            text-transform: uppercase;
+            font-size: 0.6em;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        > section {
+            width: $slide-width;
+        }
+
+        h1 {
+            margin-bottom: 0.8em;
+            color: $pine;
+        }
+
+        h2 {
+            margin-bottom: 0.8em;
+            font-size: 4rem;
+            font-weight: normal;
+            color: $pine;
+        }
+
+        .column {
+            width: 45%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .column-small {
+            width: 20%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .column-large {
+            width: 70%;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        p {
+            margin-bottom: 0.4em;
+        }
+
+        li > p {
+            margin-bottom: 0;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        img.full-slide {
+            width: 80%;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        strong {
+            color: $jungle;
+        }
+    }
+
+    @include slide-numbers;
+}
