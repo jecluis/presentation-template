@@ -12,8 +12,8 @@ export default class SlideNumber {
 	render() {
 
 		this.element = document.createElement( 'div' );
-		this.element.className = 'slide-number';
-		this.Reveal.getRevealElement().appendChild( this.element );
+		this.element.className = 'slide-number-wrapper';
+		this.Reveal.getSlidesElement().appendChild( this.element );
 
 	}
 
@@ -110,9 +110,11 @@ export default class SlideNumber {
 
 		if( typeof b === 'number' && !isNaN( b ) ) {
 			return  `<a href="${url}">
+                    <div class="slide-number">
 					<span class="slide-number-a">${a}</span>
 					<span class="slide-number-delimiter">${delimiter}</span>
 					<span class="slide-number-b">${b}</span>
+                    </div>
 					</a>`;
 		}
 		else {
